@@ -1,0 +1,10 @@
+[workspace]
+members=[]
+resolver="3"
+
+[workspace.package]
+version = "0.1.0"
+license = "MPL-2.0"
+description = "Obfuscate fonts, protecting against scrapers and bots of all kinds"
+
+[workspace.dependencies]
