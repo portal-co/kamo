@@ -1,13 +1,14 @@
 # @portal-solutions/kamo
 
 ## Description
-Obfuscate fonts, protecting against scrapers and bots of all kinds
+Font obfuscation tool ("Obfuscate fonts"), protecting against scrapers.
 
 ## Goals
-- [ ] Add project goals
+- [ ] Obfuscate font files
+- [ ] Prevent automated scraping/extraction
 
 ## Progress
-- [ ] Initial setup
+- [ ] Workspace setup with `kamo-font`
 
 ---
 *AI assisted*
