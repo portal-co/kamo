@@ -1,0 +1,10 @@
+[package]
+name = "fosyle"
+edition = "2024"
+version.workspace = true
+license.workspace = true
+description.workspace = true
+
+[dependencies]
+rand.workspace = true
+rand_chacha.workspace = true
