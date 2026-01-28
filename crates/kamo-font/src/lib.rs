@@ -1,5 +1,5 @@
 use std::collections::BTreeMap;
-#[derive(Clone, Debug,PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[derive(Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct FontObf {
     pub fwd: BTreeMap<char, char>,
     pub rev: BTreeMap<char, char>,
@@ -12,8 +12,8 @@ impl FontObf {
         x(&mut chars);
         let fwd = chars
             .iter()
-            .enumerate()
-            .map(|(i, &c)| (std::char::from_u32(i as u32).unwrap(), c))
+            .zip((0..=0x10FFFF).filter_map(std::char::from_u32))
+            .map(|(&c, i)| (i, c))
             .collect::<BTreeMap<_, _>>();
         let rev = fwd
             .iter()
