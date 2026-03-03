@@ -13,15 +13,12 @@ impl FontObf {
             .filter_map(std::char::from_u32)
             .collect::<Vec<_>>();
         x(&mut chars);
-        let fwd = chars
+        let (fwd, rev) = chars
             .iter()
+            .cloned()
             .zip((0..=0x10FFFF).filter_map(std::char::from_u32))
-            .map(|(&c, i)| (i, c))
-            .collect::<BTreeMap<_, _>>();
-        let rev = fwd
-            .iter()
-            .map(|(&k, &v)| (v, k))
-            .collect::<BTreeMap<_, _>>();
+            .map(|(c, i)| ((i, c), (c, i)))
+            .collect::<_>();
         Self { fwd, rev }
     }
     pub fn js_obf(&self) -> JsFontObf<'_> {
